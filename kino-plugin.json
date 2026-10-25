@@ -1,0 +1,55 @@
+{
+  "id": "123av",
+  "name": "123AV",
+  "version": "1.2.1",
+  "apiVersion": 6,
+  "entry": "plugin.js",
+  "description": "123av.com con HLS. streamHosts any: reproduce sin pedir permiso por cada CDN.",
+  "author": "community",
+  "homepage": "https://123av.com",
+  "hosts": [
+    "123av.com",
+    "*.123av.com",
+    "sadie-shop.site",
+    "*.sadie-shop.site",
+    "icdn.123av.me"
+  ],
+  "streamHosts": "any",
+  "capabilities": [
+    "search",
+    "home",
+    "browse",
+    "resolve"
+  ],
+  "categories": [
+    "adult"
+  ],
+  "color": "#FF3C5A",
+  "icon": "icon.png",
+  "settings": [
+    {
+      "key": "quality",
+      "label": "Calidad preferida",
+      "type": "select",
+      "default": "best",
+      "options": [
+        {
+          "value": "best",
+          "label": "Automática (HLS)"
+        },
+        {
+          "value": "1080",
+          "label": "Preferir 1080p"
+        },
+        {
+          "value": "720",
+          "label": "Preferir 720p"
+        },
+        {
+          "value": "480",
+          "label": "Preferir 480p"
+        }
+      ]
+    }
+  ]
+}
