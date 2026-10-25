@@ -1,54 +1,63 @@
 {
   "id": "123av",
   "name": "123AV",
-  "version": "1.2.1",
+  "version": "1.1.0",
   "apiVersion": 6,
   "entry": "plugin.js",
-  "description": "123av.com con HLS. streamHosts any: reproduce sin pedir permiso por cada CDN.",
+  "description": "JAV de 123AV (123av.com). Solo +18. Miniaturas corregidas, HLS verificable, selector de calidad.",
   "author": "community",
-  "homepage": "https://123av.com",
+  "homepage": "https://github.com/example/kino-plugin-123av",
+  "icon": "icon.png",
   "hosts": [
     "123av.com",
+    "www.123av.com",
     "*.123av.com",
+    "1av.to",
+    "www.1av.to",
+    "icdn.123av.me",
+    "*.123av.me",
     "sadie-shop.site",
     "*.sadie-shop.site",
-    "icdn.123av.me"
+    "rec2.123av.com"
   ],
   "streamHosts": "any",
-  "capabilities": [
-    "search",
-    "home",
-    "browse",
-    "resolve"
-  ],
-  "categories": [
-    "adult"
-  ],
-  "color": "#FF3C5A",
-  "icon": "icon.png",
+  "browser": true,
+  "capabilities": ["search", "home", "browse", "resolve"],
+  "color": "#C62828",
+  "categories": ["adult"],
   "settings": [
+    {
+      "key": "mirror",
+      "label": "Servidor / mirror",
+      "type": "select",
+      "default": "https://123av.com",
+      "options": [
+        { "value": "https://123av.com", "label": "123av.com" },
+        { "value": "https://1av.to", "label": "1av.to" }
+      ]
+    },
+    {
+      "key": "lang",
+      "label": "Idioma de la web",
+      "type": "select",
+      "default": "en",
+      "options": [
+        { "value": "en", "label": "English" },
+        { "value": "ja", "label": "日本語" },
+        { "value": "zh", "label": "中文" }
+      ]
+    },
     {
       "key": "quality",
       "label": "Calidad preferida",
       "type": "select",
-      "default": "best",
+      "default": "hls",
       "options": [
-        {
-          "value": "best",
-          "label": "Automática (HLS)"
-        },
-        {
-          "value": "1080",
-          "label": "Preferir 1080p"
-        },
-        {
-          "value": "720",
-          "label": "Preferir 720p"
-        },
-        {
-          "value": "480",
-          "label": "Preferir 480p"
-        }
+        { "value": "hls", "label": "HLS auto (mejor)" },
+        { "value": "1080", "label": "1080p" },
+        { "value": "720", "label": "720p" },
+        { "value": "480", "label": "480p" },
+        { "value": "360", "label": "360p" }
       ]
     }
   ]
